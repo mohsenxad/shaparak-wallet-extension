@@ -1,0 +1,18 @@
+{
+    "name": "کیف پول شاپرک",
+    "version": "1.0.0",
+    "description": "پرداخت آنلاین با کیف پول شاپرک",
+    "manifest_version": 3,
+    "author": "mohsenXAD",
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "permissions": [
+    "tabs"
+    ],
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "کیف پول شاپرک"
+    }
+}
