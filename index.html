@@ -1,40 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>کیف پول شاپرک</title>
+    <title>کیف شاپرک</title>
     <meta charset="utf-8">
 </head>
 <body>
     <div class="container mt-3" style="width: 450px;">
-        <h2 class="text-center">Covid Latest Report-UK</h2>
+        <h2 class="text-center">
+            پرداخت شاپرک
+        </h2>
 
         <ul
             id="ulWallet"
         >
-
         </ul>
 
-        <form
+        <details>
+            <summary>
+                اضافه کردن کارت جدید
+            </summary>
+
+            <form
             id="frmAddCart"
         >
             <legend>
-                اضافه کردن کارت جدید
+                اطلاعات کارت شتابی را وارد کنید
             </legend>
             <fieldset>
                 <ul>
                     <li>
                         <label>
-                            شماره کارت
+                            شماره کارت:
                         </label>
                         <input
-                            type="text"
+                            type="tel"
+                            name="pan0"
+                            id="pan0"
+                            maxlength="4"
+                            max="9999"
+                            minlength="4"
+                            style="width:35px"
+                        >
+                        <input
+                            type="tel"
+                            id="pan1"
+                            maxlength="4"
+                            max="9999"
+                            minlength="4"
+                            style="width:35px"
+                        >
+                        <input
+                            type="tel"
+                            id="pan2"
+                            maxlength="4"
+                            max="9999"
+                            minlength="4"
+                            style="width:35px"
+                        >
+                        <input
+                            type="tel"
+                            id="pan3"
+                            maxlength="4"
+                            max="9999"
+                            minlength="4"
+                            style="width:35px"
                         >
                     </li>
+
+                    <li>
+                        <label
+                            for="txtcvv"
+                        >
+                            cvv2:
+                        </label>
+                        <input
+                            type="tel"
+                            name="txtcvv"
+                            id="txtcvv"
+                            maxlength="4"
+                            max="9999"
+                            minlength="3"
+                            style="width:35px"
+                        >
+                    </li>
+
+                    <li>
+                        <label
+                            for="txtExpDateMonth"
+                        >
+                            ماه:
+                        </label>
+                        <input
+                            type="tel"
+                            name="txtExpDateMonth"
+                            id="txtExpDateMonth"
+                            maxlength="2"
+                            max="12"
+                            minlength="2"
+                            style="width:35px"
+                        >
+                    </li>
+
+                    <li>
+                        <label
+                            for="txtExpDateYear"
+                        >
+                            سال:
+                        </label>
+                        <input
+                            type="tel"
+                            name="txtExpDateYear"
+                            id="txtExpDateYear"
+                            maxlength="2"
+                            max="99"
+                            minlength="2"
+                            style="width:35px"
+                        >
+                    </li>
+
                 </ul>
             </fieldset>
-        </form>
 
-        <button>افزودن کارت</button>
+            <ul>
+                <li>
+                    <button
+                        type="button"
+                        id = "btnAddNewCart"
+                        name = "btnAddNewCart"
+                    >افزودن کارت</button>
+                </li>
+            </ul>
+        </form>
+        </details>
+
+       
+
     </div>
 </body>
 <script src="script.js"></script>
