@@ -48,6 +48,7 @@ function addCartItemToWalletView
 )
     {
         const ulWallet = document.getElementById('ulWallet');
+
         const newLiWallet = document.createElement("li");
 
         const newUseCartButton = document.createElement("button");
@@ -58,16 +59,32 @@ function addCartItemToWalletView
                     {
                         cartInfo: cart
                     }
-                )
+                );
+            }
+        );
+
+        const newRemoveCartButton = document.createElement("button");
+        newRemoveCartButton.innerText = "حذف";
+        newRemoveCartButton.addEventListener("click",()=>
+            {
+                removeCartFromStorage(
+                    {
+                        cartInfo: cart
+                    }
+                );
+
+                showWallet();
             }
         );
 
 
         const newCartInfo = document.createElement("b");
-        newCartInfo.innerText = cart.pan0;
+        newCartInfo.innerText = `${cart.pan0}-${cart.pan1}-${cart.pan2}-${cart.pan3}`;
 
         newLiWallet.appendChild(newCartInfo);
         newLiWallet.appendChild(newUseCartButton);
+        newLiWallet.appendChild(newRemoveCartButton);
+
 
         ulWallet.appendChild(newLiWallet);
 
@@ -78,6 +95,10 @@ function addCartListToWalletView
     cartList
 )
     {
+        const ulWallet = document.getElementById('ulWallet');
+
+        ulWallet.innerHTML='';
+
         cartList.forEach(
             cart => 
                 {
@@ -250,12 +271,44 @@ function addCartToStorage
 )
     {
         let cartList = getCartList();
-        console.log(cartList);
+
         cartList.push(cartInfo);
 
         localStorage.setItem(
             CART_LIST_KEY,
             JSON.stringify(cartList)
+        );
+    }
+
+function removeCartFromStorage
+(
+    {
+        cartInfo
+    }
+)
+    {
+        let cartList = getCartList();
+
+        let newCartList = cartList.filter(
+            (currentCart)=>
+                {
+                    if
+                    (
+                        currentCart.pan0 != cartInfo.pan0 &&
+                        currentCart.pan1 != cartInfo.pan1 &&
+                        currentCart.pan2 != cartInfo.pan2 &&
+                        currentCart.pan3 != cartInfo.pan3 
+                    )
+                        {
+                            return currentCart
+                        }
+
+                }
+        )
+
+        localStorage.setItem(
+            CART_LIST_KEY,
+            JSON.stringify(newCartList)
         );
     }
 
@@ -280,7 +333,7 @@ function onAddNewCartButtonClicked
                         cartInfo: newCartInfo
                     }
                 )
-                // add cart to local storage
+                showWallet();
             }
         else
             {
@@ -315,14 +368,46 @@ async function init()
 
             //console.log(document.body.innerHTML);
 
-            chrome.scripting
-                .executeScript(
-                    {
-                        target : {tabId : currentTab.id},
-                        files : [ "sep_content.js" ],
-                    }
-                );
-                //.then(() => console.log("script injected"));
+            let includeFile;
+
+            if
+            (
+                url.startsWith("https://bpm.shaparak.ir/")
+            )
+                {
+                    includeFile = "bpm_content.js"
+                }
+            else if
+            (
+                url.startsWith("https://sep.shaparak.ir/OnlinePG")
+            )
+                {
+                    includeFile = "sep_new_content.js"
+                }
+            else if
+            (
+                url.startsWith("https://sep.shaparak.ir/")
+            )
+                {
+                    includeFile = "sep_content.js"
+                }
+
+            if
+            (
+                includeFile
+            )
+                {
+                    chrome.scripting
+                    .executeScript(
+                        {
+                            target : {tabId : currentTab.id},
+                            files : [ includeFile ],
+                        }
+                    );
+                    //.then(() => console.log("script injected"));
+                }
+
+            
         }
     );
 }
