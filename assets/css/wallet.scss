@@ -1,0 +1,49 @@
+.btnUseCart{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #f0eff3;
+    display: inline-flex;
+    align-items: center;
+    background: #5746ee;;
+    border: none;
+
+    &::before {
+        content: "";
+        background: url(/assets/images/move-up-blue.svg);
+        width: 25px;
+        height: 25px;
+        margin-left: 8px;
+        -webkit-writing-mode: vertical-rl;
+    }
+    cursor: pointer;
+}
+.btnRemoveCart{
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #f0eff3;
+    display: inline-flex;
+    align-items: center;
+    background: #b39b9d;
+    border: none;
+
+    &::before {
+        content: "";
+        background: url(/assets/images/icn-general-delete-red.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+        -webkit-writing-mode: vertical-rl;
+    }
+    cursor: pointer;
+}
+

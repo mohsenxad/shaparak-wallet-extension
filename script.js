@@ -52,7 +52,9 @@ function addCartItemToWalletView
         const newLiWallet = document.createElement("li");
 
         const newUseCartButton = document.createElement("button");
-        newUseCartButton.innerText = "استفاده از کارت";
+        newUseCartButton.classList.add('btnUseCart');
+        newUseCartButton.setAttribute("type","button");
+        newUseCartButton.innerText = "استفاده";
         newUseCartButton.addEventListener("click",()=>
             {
                 sendCartInfoToTab(
@@ -64,6 +66,7 @@ function addCartItemToWalletView
         );
 
         const newRemoveCartButton = document.createElement("button");
+        newRemoveCartButton.classList.add('btnRemoveCart');
         newRemoveCartButton.innerText = "حذف";
         newRemoveCartButton.addEventListener("click",()=>
             {

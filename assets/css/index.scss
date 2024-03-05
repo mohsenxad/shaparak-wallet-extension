@@ -1,4 +1,17 @@
-@import url(add_new_cart.scss);
+@import 'add_new_cart','wallet','fonts';
+
+body {
+	font-family: IranSans;
+	direction: rtl;
+	margin: 0;
+	background-color: #F4F6F9;
+	padding: 16px 16px 24px 16px;
+  width: 400px;
+}
+
+button {
+  font-family: IranSans;
+}
 
 section {
     border-radius: 8px;

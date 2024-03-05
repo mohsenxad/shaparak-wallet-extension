@@ -8,137 +8,149 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <div class="container mt-3" style="width: 450px;">
-        <h2 class="text-center">
-            پرداخت شاپرک
-        </h2>
+    <h2>
+        پرداخت شاپرک
+    </h2>
 
-        <ul
-            id="ulWallet"
-        >
-        </ul>
+    <details>
+        <summary>
+            چطوری کار میکنه؟
+        </summary>
+        <Section>
+            <p>
+                این ابزار به شما کمک میکنه که به اشتباه داخل سایت های جعلی پرداخت نکنی و همینطور کمک میکنه که هر بار اطلاعات 
+                کارت های بانکیت رو وارد درگاه پرداخت نکنی
+            </p>
+            <p>
+                اطلاعات کارت بانکی شما داخل مرورگر شما ذخیره میشه و هیچ کس و هیچ چیز دیگه به این اطلاعات دسترسی ندارد.
+            </p>
+        </Section>
+    </details>
 
-        <details>
-            <summary>
-                اضافه کردن کارت جدید
-            </summary>
+    <ul
+        id="ulWallet"
+    >
+    </ul>
 
-            <form
-            id="frmAddCart"
-        >
-            <legend>
-                اطلاعات کارت شتابی را وارد کنید
-            </legend>
-            <fieldset>
-                <ul>
-                    <li>
-                        <label>
-                            شماره کارت:
-                        </label>
-                        <input
-                            type="tel"
-                            name="pan0"
-                            id="pan0"
-                            maxlength="4"
-                            max="9999"
-                            minlength="4"
-                            style="width:35px"
-                        >
-                        <input
-                            type="tel"
-                            id="pan1"
-                            maxlength="4"
-                            max="9999"
-                            minlength="4"
-                            style="width:35px"
-                        >
-                        <input
-                            type="tel"
-                            id="pan2"
-                            maxlength="4"
-                            max="9999"
-                            minlength="4"
-                            style="width:35px"
-                        >
-                        <input
-                            type="tel"
-                            id="pan3"
-                            maxlength="4"
-                            max="9999"
-                            minlength="4"
-                            style="width:35px"
-                        >
-                    </li>
+    <details>
+        <summary>
+            اضافه کردن کارت جدید
+        </summary>
 
-                    <li>
-                        <label
-                            for="txtcvv"
-                        >
-                            cvv2:
-                        </label>
-                        <input
-                            type="tel"
-                            name="txtcvv"
-                            id="txtcvv"
-                            maxlength="4"
-                            max="9999"
-                            minlength="3"
-                            style="width:35px"
-                        >
-                    </li>
-
-                    <li>
-                        <label
-                            for="txtExpDateMonth"
-                        >
-                            ماه:
-                        </label>
-                        <input
-                            type="tel"
-                            name="txtExpDateMonth"
-                            id="txtExpDateMonth"
-                            maxlength="2"
-                            max="12"
-                            minlength="2"
-                            style="width:35px"
-                        >
-                    </li>
-
-                    <li>
-                        <label
-                            for="txtExpDateYear"
-                        >
-                            سال:
-                        </label>
-                        <input
-                            type="tel"
-                            name="txtExpDateYear"
-                            id="txtExpDateYear"
-                            maxlength="2"
-                            max="99"
-                            minlength="2"
-                            style="width:35px"
-                        >
-                    </li>
-
-                </ul>
-            </fieldset>
-
+        <form
+        id="frmAddCart"
+    >
+        <legend>
+            اطلاعات کارت شتابی را وارد کنید
+        </legend>
+        <fieldset>
             <ul>
                 <li>
-                    <button
-                        type="button"
-                        id = "btnAddNewCart"
-                        name = "btnAddNewCart"
-                    >افزودن کارت</button>
+                    <label>
+                        شماره کارت:
+                    </label>
+                    <input
+                        type="tel"
+                        id="pan3"
+                        maxlength="4"
+                        max="9999"
+                        minlength="4"
+                        style="width:35px"
+                    >
+                    <input
+                        type="tel"
+                        id="pan2"
+                        maxlength="4"
+                        max="9999"
+                        minlength="4"
+                        style="width:35px"
+                    >
+                    <input
+                        type="tel"
+                        id="pan1"
+                        maxlength="4"
+                        max="9999"
+                        minlength="4"
+                        style="width:35px"
+                    >
+                    <input
+                        type="tel"
+                        name="pan0"
+                        id="pan0"
+                        maxlength="4"
+                        max="9999"
+                        minlength="4"
+                        style="width:35px"
+                    >
                 </li>
+
+                <li>
+                    <label
+                        for="txtcvv"
+                    >
+                        cvv2:
+                    </label>
+                    <input
+                        type="tel"
+                        name="txtcvv"
+                        id="txtcvv"
+                        maxlength="4"
+                        max="9999"
+                        minlength="3"
+                        style="width:35px"
+                    >
+                </li>
+
+                <li>
+                    <label
+                        for="txtExpDateMonth"
+                    >
+                        ماه:
+                    </label>
+                    <input
+                        type="tel"
+                        name="txtExpDateMonth"
+                        id="txtExpDateMonth"
+                        maxlength="2"
+                        max="12"
+                        minlength="2"
+                        style="width:35px"
+                    >
+                </li>
+
+                <li>
+                    <label
+                        for="txtExpDateYear"
+                    >
+                        سال:
+                    </label>
+                    <input
+                        type="tel"
+                        name="txtExpDateYear"
+                        id="txtExpDateYear"
+                        maxlength="2"
+                        max="99"
+                        minlength="2"
+                        style="width:35px"
+                    >
+                </li>
+
             </ul>
-        </form>
-        </details>
+        </fieldset>
 
-       
-
-    </div>
+        <ul>
+            <li>
+                <button
+                    type="button"
+                    id = "btnAddNewCart"
+                    name = "btnAddNewCart"
+                >
+                    افزودن کارت
+                </button>
+            </li>
+        </ul>
+    </form>
+    </details>
 </body>
 <script src="script.js"></script>
 </html>
