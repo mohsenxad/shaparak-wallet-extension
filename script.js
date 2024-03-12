@@ -47,9 +47,51 @@ function addCartItemToWalletView
     }
 )
     {
+
+        const hashedCartNumber = `${cart.pan0}-****-${cart.pan3}`;
+
         const ulWallet = document.getElementById('ulWallet');
 
         const newLiWallet = document.createElement("li");
+
+        const newDl = document.createElement("dl");
+
+
+
+        const dtBankTitle = document.createElement("dt");
+        dtBankTitle.innerText = "اسم بانک";
+
+        const ddBankTitle = document.createElement("dd");
+        ddBankTitle.innerText = "سامان";
+
+
+        newDl.appendChild(dtBankTitle);
+        newDl.appendChild(ddBankTitle);
+
+        const dtBankLogo = document.createElement("dt");
+        dtBankLogo.innerText = "لوگو بانک";
+
+        const ddBankLogo = document.createElement("dd");
+        ddBankLogo.classList.add('bank-logo');
+        const bankLogoUrl = `https://assets.megabuild.ir/bank/logo/648d84607e7601d06532982e.svg`;
+        ddBankLogo.style.backgroundImage = `url("${bankLogoUrl}")`;
+
+        newDl.appendChild(dtBankLogo);
+        newDl.appendChild(ddBankLogo);
+
+        const dtCartNumTitle = document.createElement("dt");
+        dtCartNumTitle.innerText = "شماره کارت";
+
+        const ddCartNumTitle = document.createElement("dd");
+        ddCartNumTitle.innerText = hashedCartNumber;
+
+        newDl.appendChild(dtCartNumTitle);
+        newDl.appendChild(ddCartNumTitle);
+
+
+        const newUlActionList = document.createElement("ul");
+        const newLiActionListItem = document.createElement("li");
+
 
         const newUseCartButton = document.createElement("button");
         newUseCartButton.classList.add('btnUseCart');
@@ -80,14 +122,15 @@ function addCartItemToWalletView
             }
         );
 
+        
+        newLiActionListItem.appendChild(newUseCartButton);
+        newLiActionListItem.appendChild(newRemoveCartButton);
 
-        const newCartInfo = document.createElement("b");
-        newCartInfo.innerText = `${cart.pan0}-${cart.pan1}-${cart.pan2}-${cart.pan3}`;
+        newUlActionList.appendChild(newLiActionListItem);
 
-        newLiWallet.appendChild(newCartInfo);
-        newLiWallet.appendChild(newUseCartButton);
-        newLiWallet.appendChild(newRemoveCartButton);
 
+        newLiWallet.appendChild(newDl);
+        newLiWallet.appendChild(newUlActionList);
 
         ulWallet.appendChild(newLiWallet);
 
