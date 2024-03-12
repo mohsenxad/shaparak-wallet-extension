@@ -1,126 +1,130 @@
 #btnAddNewCart {
   font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #f0eff3;
-    display: inline-flex;
-    align-items: center;
-    background: #5746ee;;
-    border: none;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #f0eff3;
+  display: inline-flex;
+  align-items: center;
+  background: #5746ee;
+  border: none;
 
-    &::before {
-        content: "";
-        background: url(/assets/images/icn-general-add-dark-blue.svg);
-        width: 25px;
-        height: 25px;
-        margin-left: 8px;
-        -webkit-writing-mode: vertical-rl;
-    }
-    cursor: pointer;
+  &::before {
+    content: "";
+    background: url(/assets/images/icn-general-add-dark-blue.svg);
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    -webkit-writing-mode: vertical-rl;
+  }
+  cursor: pointer;
 }
 
 form {
-    width: 100%;
-  
-    fieldset {
-      border: none;
-      margin: 0;
-      padding: 0;
-    }
-    .close-btn {
-      background-color: #f4f9fd;
-      border-radius: 50%;
-      padding: 10px;
-      border: none;
-      content: url(/assets/images/icn-general-add-blue.svg);
+  width: 100%;
+  legend {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #1d2939;
+  }
+
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  .close-btn {
+    background-color: #f4f9fd;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    content: url(/assets/images/icn-general-add-blue.svg);
+    display: flex;
+    transform: rotate(45deg);
+    float: right;
+    -webkit-writing-mode: vertical-rl;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 5px;
       display: flex;
-      transform: rotate(45deg);
-      float: right;
-      -webkit-writing-mode: vertical-rl;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 8px;
+      &:nth-child(3),
+      &:nth-child(4) {
+        input {
+          flex: 1 0 40%;
+        }
+      }
     }
-  
-    legend {
-      font-size: 16px;
+    label {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: right;
+      color: #1d2939;
+      flex: 1 0 100%;
+    }
+    .file-label {
+      font-size: 14px;
       font-weight: normal;
       font-stretch: normal;
       font-style: normal;
-      line-height: normal;
+      line-height: 1.5;
       letter-spacing: normal;
-      color: #7d8592;
+      color: #3f8cff;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &::before {
+        content: url(/assets/images/icn-general-add-dark-blue.svg);
+        margin-right: 4px;
+      }
     }
-  
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        position: relative;
-        margin-bottom: 5px;
-        display: flex;
-        align-items: center;
-      }
-      label {
-        font-size: 14px;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        color: #0a1629;
-        display: block;
-        margin-left: 12px;
-      }
-      .file-label {
+    input {
+      border-radius: 14px;
+      box-shadow: 0 1px 2px 0 rgba(184, 200, 224, 0.22);
+      border: solid 1px #d8e0f0;
+      background-color: #fff;
+      padding: 13px 18px 14px 18px;
+      display: block;
+      width: 100%;
+      margin: 7px 0 5px 0;
+      flex: 1 0 10%;
+      &::placeholder {
         font-size: 14px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.5;
         letter-spacing: normal;
-        color: #3f8cff;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        &::before {
-          content: url(/assets/images/icn-general-add-dark-blue.svg);
-          margin-right: 4px;
-        }
-      }
-      input {
-        border-radius: 14px;
-        box-shadow: 0 1px 2px 0 rgba(184, 200, 224, 0.22);
-        border: solid 1px #d8e0f0;
-        background-color: #fff;
-        padding: 13px 18px 14px 18px;
-        display: block;
-        width: 100%;
-        margin: 7px 0 5px 0;
-        &::placeholder {
-          font-size: 14px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 1.5;
-          letter-spacing: normal;
-          color: #7d8592;
-        }
-      }
-      input[type="checkbox"] {
-        border: none;
-        box-shadow: none;
-        margin: 0;
-        display: none;
-      }
-      input[type="file"] {
-        border: none;
-        position: absolute;
-        width: 35%;
-        opacity: 0;
-        cursor: pointer;
-        display: none;
+        color: #7d8592;
+        text-align: center;
       }
     }
+    input[type="checkbox"] {
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      display: none;
+    }
+    input[type="file"] {
+      border: none;
+      position: absolute;
+      width: 35%;
+      opacity: 0;
+      cursor: pointer;
+      display: none;
+    }
   }
+}

@@ -1,0 +1,135 @@
+#btnAddNewCart {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #f0eff3;
+  display: inline-flex;
+  align-items: center;
+  background: #5746ee;
+  border: none;
+  cursor: pointer;
+}
+#btnAddNewCart::before {
+  content: "";
+  background: url(/assets/images/icn-general-add-dark-blue.svg);
+  width: 25px;
+  height: 25px;
+  margin-left: 8px;
+  -webkit-writing-mode: vertical-rl;
+}
+
+form {
+  width: 100%;
+}
+form legend {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #1d2939;
+}
+form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+form .close-btn {
+  background-color: #f4f9fd;
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  content: url(/assets/images/icn-general-add-blue.svg);
+  display: flex;
+  transform: rotate(45deg);
+  float: right;
+  -webkit-writing-mode: vertical-rl;
+}
+form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+form ul li {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+form ul li:nth-child(3) input, form ul li:nth-child(4) input {
+  flex: 1 0 40%;
+}
+form ul label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: right;
+  color: #1d2939;
+  flex: 1 0 100%;
+}
+form ul .file-label {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #3f8cff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form ul .file-label::before {
+  content: url(/assets/images/icn-general-add-dark-blue.svg);
+  margin-right: 4px;
+}
+form ul input {
+  border-radius: 14px;
+  box-shadow: 0 1px 2px 0 rgba(184, 200, 224, 0.22);
+  border: solid 1px #d8e0f0;
+  background-color: #fff;
+  padding: 13px 18px 14px 18px;
+  display: block;
+  width: 100%;
+  margin: 7px 0 5px 0;
+  flex: 1 0 10%;
+}
+form ul input::-moz-placeholder {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #7d8592;
+  text-align: center;
+}
+form ul input::placeholder {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #7d8592;
+  text-align: center;
+}
+form ul input[type=checkbox] {
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  display: none;
+}
+form ul input[type=file] {
+  border: none;
+  position: absolute;
+  width: 35%;
+  opacity: 0;
+  cursor: pointer;
+  display: none;
+}/*# sourceMappingURL=add_new_cart.css.map */
