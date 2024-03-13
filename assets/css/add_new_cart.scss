@@ -1,5 +1,4 @@
-
-form {
+#frmAddCart {
   width: 100%;
   legend {
     font-style: normal;
@@ -8,82 +7,32 @@ form {
     line-height: 24px;
     text-align: center;
     color: #1d2939;
-  }
-
-  fieldset {
-    border: none;
-    margin: 0;
-    padding: 0;
-  }
-  .close-btn {
-    background-color: #f4f9fd;
-    border-radius: 50%;
-    padding: 10px;
-    border: none;
-    content: url(/assets/images/icn-general-add-blue.svg);
-    display: flex;
-    transform: rotate(45deg);
-    float: right;
-    -webkit-writing-mode: vertical-rl;
+    margin: 32px 0;
   }
 
   ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    &:nth-child(3) {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      gap: 8px;
-      padding: 0 0 0 8px;
-      margin-top: 16px;
-
-      li{
-        width: 100%;
-        button{
-          width: 100%;
-          text-align: center;
-          padding: 10px 0;
-          border-radius: 8px;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 24px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-      #btnAddNewCart {
-        gap: 8px;
-        background: #23a26d;
-        color: #ffffff;
-        border: none;
-        &::before {
-          content: "";
-          background: url(/assets/images/icn-general-add-white.svg);
-          width: 20px;
-          display: block;
-          height: 20px;
-        }
-      }
-      #btnEditNewCart {
-        color: #344054;
-        background: #ffffff;
-        border: 1px solid #d0d5dd;
-      }
-      
-    }
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 8px;
     li {
       margin-bottom: 5px;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       column-gap: 8px;
+      &:nth-child(1){
+        grid-column: span 2;
+      }
+      &:nth-child(2) {
+        grid-column: span 2;
+        label {
+          display: none;
+        }
+      }
       &:nth-child(3),
       &:nth-child(4) {
-        input {
-          flex: 1 0 40%;
+        label {
+          display: none;
         }
       }
     }
@@ -130,21 +79,54 @@ form {
         letter-spacing: normal;
         color: #7d8592;
         text-align: center;
+        font-family: IranSans;
       }
     }
-    input[type="checkbox"] {
-      border: none;
-      box-shadow: none;
-      margin: 0;
-      display: none;
-    }
-    input[type="file"] {
-      border: none;
-      position: absolute;
-      width: 35%;
-      opacity: 0;
-      cursor: pointer;
-      display: none;
+
+
+
+    &:nth-child(3) {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      gap: 8px;
+      padding: 0 0 0 8px;
+      margin-top: 16px;
+      
+      li {
+        width: 100%;
+        grid-column: span 1;
+        button {
+          width: 100%;
+          text-align: center;
+          padding: 10px 0;
+          border-radius: 8px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      #btnAddNewCart {
+        gap: 8px;
+        background: #23a26d;
+        color: #ffffff;
+        border: none;
+        &::before {
+          content: "";
+          background: url(/assets/images/icn-general-add-white.svg);
+          width: 20px;
+          display: block;
+          height: 20px;
+        }
+      }
+      #btnEditNewCart {
+        color: #344054;
+        background: #ffffff;
+        border: 1px solid #d0d5dd;
+      }
     }
   }
 }

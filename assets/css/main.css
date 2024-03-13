@@ -1,0 +1,49 @@
+body {
+  font-family: IranSans;
+  direction: rtl;
+  margin: 0;
+  background-color: #f5f7f9;
+  padding-bottom: 32px;
+}
+
+button {
+  font-family: IranSans;
+}
+
+h2 {
+  display: none;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+  content: "";
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+dl dt {
+  display: none;
+}
+dl dd {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=main.css.map */

@@ -1,14 +1,14 @@
+#secWallet h2 {
+  display: block;
+}
+
 #ulWallet {
-  list-style: none;
-  margin: 0;
   padding: 16px;
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 8px;
 }
 #ulWallet li {
-  margin: 0;
-  padding: 0;
   padding: 8px;
   background: #ffffff;
   border: 1px solid #ecf0f3;
@@ -19,8 +19,6 @@
   justify-content: center;
 }
 #ulWallet li dl {
-  margin: 0;
-  padding: 0;
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -29,13 +27,6 @@
   height: 28px;
   background-size: contain;
   margin-right: auto;
-}
-#ulWallet li dl dt {
-  display: none;
-}
-#ulWallet li dl dd {
-  margin: 0;
-  padding: 0;
 }
 #ulWallet li dl dd:nth-child(2) {
   font-weight: 400;
@@ -51,14 +42,9 @@
   text-align: center;
   color: #1d2939;
   grid-column: span 2;
-}
-#ulWallet li ul {
-  margin: 0;
-  padding: 0;
+  margin: 16px 0;
 }
 #ulWallet li ul li {
-  margin: 0;
-  padding: 0;
   border: none;
   box-shadow: none;
 }
