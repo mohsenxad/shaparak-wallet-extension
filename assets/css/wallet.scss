@@ -1,16 +1,13 @@
 #ulWallet {
   list-style: none;
-  margin: 16px 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 0;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 50% 50%;
   gap: 8px;
   li {
     margin: 0;
     padding: 0;
-    flex: 1 0 40%;
     padding: 8px;
     background: #ffffff;
     border: 1px solid #ecf0f3;
@@ -19,21 +16,52 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    dl{
-      .bank-logo{
-        width: 40px;
-        height: 40px;
+    dl {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      .bank-logo {
+        width: 28px;
+        height: 28px;
         background-size: contain;
+        margin-right: auto;
+      }
+      dt {
+        display: none;
+      }
+      dd {
+        margin: 0;
+        padding: 0;
+        &:nth-child(2) {
+          font-weight: 400;
+          font-size: 10px;
+          line-height: 20px;
+          text-align: right;
+          color: #868b91;
+        }
+        &:nth-child(6) {
+          font-weight: 700;
+          font-size: 13px;
+          line-height: 24px;
+          text-align: center;
+          color: #1d2939;
+          grid-column: span 2;
+        }
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
       }
     }
   }
-  b {
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 24px;
-    text-align: center;
-    color: #1d2939;
-  }
+
   .btnUseCart {
     font-weight: 400;
     font-size: 14px;
@@ -45,15 +73,6 @@
     border-radius: 8px;
     border: 1px solid #d0d5dd;
     border-radius: 8px;
-
-    // &::before {
-    //   content: "";
-    //   background: url(/assets/images/move-up-blue.svg);
-    //   width: 25px;
-    //   height: 25px;
-    //   margin-left: 8px;
-    //   -webkit-writing-mode: vertical-rl;
-    // }
     cursor: pointer;
   }
   .btnRemoveCart {
@@ -68,6 +87,7 @@
     align-items: center;
     background: #b39b9d;
     border: none;
+    display: none;
 
     &::before {
       content: "";

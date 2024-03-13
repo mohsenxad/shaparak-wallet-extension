@@ -1,17 +1,14 @@
 #ulWallet {
   list-style: none;
-  margin: 16px 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 0;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 50% 50%;
   gap: 8px;
 }
 #ulWallet li {
   margin: 0;
   padding: 0;
-  flex: 1 0 40%;
   padding: 8px;
   background: #ffffff;
   border: 1px solid #ecf0f3;
@@ -21,12 +18,49 @@
   flex-direction: column;
   justify-content: center;
 }
-#ulWallet b {
+#ulWallet li dl {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+#ulWallet li dl .bank-logo {
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  margin-right: auto;
+}
+#ulWallet li dl dt {
+  display: none;
+}
+#ulWallet li dl dd {
+  margin: 0;
+  padding: 0;
+}
+#ulWallet li dl dd:nth-child(2) {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  text-align: right;
+  color: #868b91;
+}
+#ulWallet li dl dd:nth-child(6) {
   font-weight: 700;
   font-size: 13px;
   line-height: 24px;
   text-align: center;
   color: #1d2939;
+  grid-column: span 2;
+}
+#ulWallet li ul {
+  margin: 0;
+  padding: 0;
+}
+#ulWallet li ul li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
 }
 #ulWallet .btnUseCart {
   font-weight: 400;
@@ -53,6 +87,7 @@
   align-items: center;
   background: #b39b9d;
   border: none;
+  display: none;
   cursor: pointer;
 }
 #ulWallet .btnRemoveCart::before {
