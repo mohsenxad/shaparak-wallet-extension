@@ -2,6 +2,55 @@
 const CART_LIST_KEY = "CART_LIST";
 var currentTabId;
 
+function getBankFromCartInfo
+(
+    {
+        cartInfo
+    }
+)
+    {
+        const cartNumber8Digit = cartInfo.pan0+cartInfo.pan1;
+        const cartNumber6Digit = cartNumber8Digit.slice(0,6);
+        
+        switch (cartNumber6Digit)
+        {
+            case "610433":
+                {
+                    return {
+                        bankName:'ملت',
+                        bankId: '6475f8534e04286897988aac'
+                    }
+                    // break
+                }
+            case "621986":
+                {
+                    return {
+                        bankName:'سامان',
+                        bankId: '651be6f6756aae76c113a81d'
+                    }
+                }
+            case "628023":
+                {
+                    return {
+                        bankName:'مسکن',
+                        bankId: '648d84357e7601d06532982b'
+                    }
+                }
+            default:
+                {
+                    return {
+                        bankName:'',
+                        bankId: '648d84607e7601d06532982e'
+                    }
+                }
+        }
+
+             
+
+        
+
+    }
+
 function getCartList
 ()
     {
@@ -50,6 +99,12 @@ function addCartItemToWalletView
 
         const hashedCartNumber = `${cart.pan0}-****-${cart.pan3}`;
 
+        const getBankFromCartInfoResult = getBankFromCartInfo(
+            {
+                cartInfo: cart
+            }
+        )
+
         const ulWallet = document.getElementById('ulWallet');
 
         const newLiWallet = document.createElement("li");
@@ -62,7 +117,7 @@ function addCartItemToWalletView
         dtBankTitle.innerText = "اسم بانک";
 
         const ddBankTitle = document.createElement("dd");
-        ddBankTitle.innerText = "سامان";
+        ddBankTitle.innerText = getBankFromCartInfoResult.bankName;
 
 
         newDl.appendChild(dtBankTitle);
@@ -73,7 +128,7 @@ function addCartItemToWalletView
 
         const ddBankLogo = document.createElement("dd");
         ddBankLogo.classList.add('bank-logo');
-        const bankLogoUrl = `https://assets.megabuild.ir/bank/logo/648d84607e7601d06532982e.svg`;
+        const bankLogoUrl = `https://assets.megabuild.ir/bank/logo/${getBankFromCartInfoResult.bankId}.svg`;
         ddBankLogo.style.backgroundImage = `url("${bankLogoUrl}")`;
 
         newDl.appendChild(dtBankLogo);
