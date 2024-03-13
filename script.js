@@ -197,6 +197,7 @@ function addCartListToWalletView
 )
     {
         const ulWallet = document.getElementById('ulWallet');
+        ulWallet.classList.remove('empty-wallet');
 
         ulWallet.innerHTML='';
 
@@ -222,7 +223,20 @@ function showWallet
 ()
     {
         const cartList = getCartList();
-        addCartListToWalletView(cartList);
+
+        if
+        (
+            cartList && 
+            cartList.length > 0
+        )
+            {
+                addCartListToWalletView(cartList);
+            }
+        else
+            {
+                const ulWallet = document.getElementById('ulWallet');
+                ulWallet.classList.add('empty-wallet');
+            }
     }
 
 async function showAddNewCartForm
@@ -453,10 +467,27 @@ function setAddNewCartEventListener
         );
     }
 
+function setCancelNewCArtEventListener()
+{
+    
+    const cancelNewCartButtonElement = document.getElementById("btnCancelNewCart");
+    cancelNewCartButtonElement.addEventListener(
+        "click",
+        closeAddNewCart
+    );
+}
+
+function closeAddNewCart()
+    {
+        const detAddCartElement = document.getElementById("detAddCart")
+        detAddCartElement.open = false;
+    }
+
 async function init()
 {
     showWallet();
     setAddNewCartEventListener();
+    setCancelNewCArtEventListener();
     chrome.tabs.query({active: true, lastFocusedWindow: true}, async tabs =>
         {
             let currentTab = tabs[0];
