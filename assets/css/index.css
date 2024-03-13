@@ -1,52 +1,166 @@
+@charset "UTF-8";
 @font-face {
   font-family: IranSans;
   font-style: normal;
   font-weight: 400;
   src: url("/assets/fonts/IRANSansWeb_FaNum.woff2") format("woff2");
 }
-form {
+body {
+  font-family: IranSans;
+  direction: rtl;
+  margin: 0;
+  background-color: #f5f7f9;
+  padding-bottom: 32px;
+}
+
+button {
+  font-family: IranSans;
+}
+
+h2 {
+  display: none;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+  content: "";
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+dl dt {
+  display: none;
+}
+dl dd {
+  margin: 0;
+  padding: 0;
+}
+
+#frmAddCart {
   width: 100%;
 }
-form legend {
+#frmAddCart legend {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   color: #1d2939;
+  margin: 32px 0;
 }
-form fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
+#frmAddCart ul {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 8px;
 }
-form .close-btn {
-  background-color: #f4f9fd;
-  border-radius: 50%;
-  padding: 10px;
-  border: none;
-  content: url(/assets/images/icn-general-add-blue.svg);
+#frmAddCart ul li {
+  margin-bottom: 5px;
   display: flex;
-  transform: rotate(45deg);
-  float: right;
-  -webkit-writing-mode: vertical-rl;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
-form ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#frmAddCart ul li:nth-child(1) {
+  grid-column: span 2;
 }
-form ul:nth-child(3) {
+#frmAddCart ul li:nth-child(2) {
+  grid-column: span 2;
+}
+#frmAddCart ul li:nth-child(2) label {
+  display: none;
+}
+#frmAddCart ul li:nth-child(3) label, #frmAddCart ul li:nth-child(4) label {
+  display: none;
+}
+#frmAddCart ul label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: right;
+  color: #1d2939;
+  flex: 1 0 100%;
+}
+#frmAddCart ul .file-label {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #3f8cff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#frmAddCart ul .file-label::before {
+  content: url(/assets/images/icn-general-add-dark-blue.svg);
+  margin-right: 4px;
+}
+#frmAddCart ul input {
+  border-radius: 14px;
+  box-shadow: 0 1px 2px 0 rgba(184, 200, 224, 0.22);
+  border: solid 1px #d8e0f0;
+  background-color: #fff;
+  padding: 13px 18px 14px 18px;
+  display: block;
+  width: 100%;
+  margin: 7px 0 5px 0;
+  flex: 1 0 10%;
+}
+#frmAddCart ul input::-moz-placeholder {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #7d8592;
+  text-align: center;
+  font-family: IranSans;
+}
+#frmAddCart ul input::placeholder {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #7d8592;
+  text-align: center;
+  font-family: IranSans;
+}
+#frmAddCart ul:nth-child(3) {
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 8px;
   padding: 0 0 0 8px;
   margin-top: 16px;
 }
-form ul:nth-child(3) li {
+#frmAddCart ul:nth-child(3) li {
   width: 100%;
+  grid-column: span 1;
 }
-form ul:nth-child(3) li button {
+#frmAddCart ul:nth-child(3) li button {
   width: 100%;
   text-align: center;
   padding: 10px 0;
@@ -59,116 +173,36 @@ form ul:nth-child(3) li button {
   align-items: center;
   justify-content: center;
 }
-form ul:nth-child(3) #btnAddNewCart {
+#frmAddCart ul:nth-child(3) #btnAddNewCart {
   gap: 8px;
   background: #23a26d;
   color: #ffffff;
   border: none;
 }
-form ul:nth-child(3) #btnAddNewCart::before {
+#frmAddCart ul:nth-child(3) #btnAddNewCart::before {
   content: "";
   background: url(/assets/images/icn-general-add-white.svg);
   width: 20px;
   display: block;
   height: 20px;
 }
-form ul:nth-child(3) #btnEditNewCart {
+#frmAddCart ul:nth-child(3) #btnEditNewCart {
   color: #344054;
   background: #ffffff;
   border: 1px solid #d0d5dd;
 }
-form ul li {
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  -moz-column-gap: 8px;
-       column-gap: 8px;
-}
-form ul li:nth-child(3) input, form ul li:nth-child(4) input {
-  flex: 1 0 40%;
-}
-form ul label {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: right;
-  color: #1d2939;
-  flex: 1 0 100%;
-}
-form ul .file-label {
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  color: #3f8cff;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-form ul .file-label::before {
-  content: url(/assets/images/icn-general-add-dark-blue.svg);
-  margin-right: 4px;
-}
-form ul input {
-  border-radius: 14px;
-  box-shadow: 0 1px 2px 0 rgba(184, 200, 224, 0.22);
-  border: solid 1px #d8e0f0;
-  background-color: #fff;
-  padding: 13px 18px 14px 18px;
+
+#secWallet h2 {
   display: block;
-  width: 100%;
-  margin: 7px 0 5px 0;
-  flex: 1 0 10%;
-}
-form ul input::-moz-placeholder {
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  color: #7d8592;
-  text-align: center;
-}
-form ul input::placeholder {
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  color: #7d8592;
-  text-align: center;
-}
-form ul input[type=checkbox] {
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  display: none;
-}
-form ul input[type=file] {
-  border: none;
-  position: absolute;
-  width: 35%;
-  opacity: 0;
-  cursor: pointer;
-  display: none;
 }
 
 #ulWallet {
-  list-style: none;
-  margin: 0;
   padding: 16px;
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 8px;
 }
 #ulWallet li {
-  margin: 0;
-  padding: 0;
   padding: 8px;
   background: #ffffff;
   border: 1px solid #ecf0f3;
@@ -179,8 +213,6 @@ form ul input[type=file] {
   justify-content: center;
 }
 #ulWallet li dl {
-  margin: 0;
-  padding: 0;
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -189,13 +221,6 @@ form ul input[type=file] {
   height: 28px;
   background-size: contain;
   margin-right: auto;
-}
-#ulWallet li dl dt {
-  display: none;
-}
-#ulWallet li dl dd {
-  margin: 0;
-  padding: 0;
 }
 #ulWallet li dl dd:nth-child(2) {
   font-weight: 400;
@@ -211,14 +236,9 @@ form ul input[type=file] {
   text-align: center;
   color: #1d2939;
   grid-column: span 2;
-}
-#ulWallet li ul {
-  margin: 0;
-  padding: 0;
+  margin: 16px 0;
 }
 #ulWallet li ul li {
-  margin: 0;
-  padding: 0;
   border: none;
   box-shadow: none;
 }
@@ -261,21 +281,6 @@ form ul input[type=file] {
   -webkit-writing-mode: vertical-rl;
 }
 
-body {
-  font-family: IranSans;
-  direction: rtl;
-  margin: 0;
-  background-color: #f5f7f9;
-}
-
-button {
-  font-family: IranSans;
-}
-
-h2 {
-  display: none;
-}
-
 details {
   display: flex;
   padding: 8px;
@@ -302,6 +307,25 @@ details summary::before {
   width: 20px;
   height: 21px;
 }
+details .addCart {
+  gap: 8px;
+  background: #23a26d;
+  color: #ffffff;
+  border: none;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+details .addCart::before {
+  background: url(/assets/images/icn-general-add-white.svg);
+}
 details p {
   font-weight: 400;
   font-size: 12px;
@@ -319,9 +343,36 @@ details[open] summary::before {
   width: 20px;
   height: 21px;
 }
-
-details summary::-webkit-details-marker,
-details summary::marker {
-  display: none;
+details[open] .addCart::before {
   content: "";
+  background: url(/assets/images/icn-general-add-white.svg);
+}
+
+.empty-wallet {
+  background: #ffffff;
+  box-shadow: 0px 8px 16px #eff0f6;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  margin: 32px 8px;
+}
+.empty-wallet::before {
+  content: "";
+  background: url("../images/tabler-icon-credit-card.svg");
+  width: 48px;
+  height: 48px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.empty-wallet::after {
+  content: "هنوز کارتی اضافه نکرده‌اید!";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #868b91;
 }/*# sourceMappingURL=index.css.map */
