@@ -523,6 +523,13 @@ async function init()
                 {
                     includeFile = "sep_content.js"
                 }
+            else if
+            (
+                url.startsWith("https://pep.shaparak.ir/")
+            )
+                {
+                    includeFile = "pep_content.js"
+                }
 
             if
             (
